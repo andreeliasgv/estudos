@@ -1,0 +1,14 @@
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\bin\Debug\net10.0\CalculadoraCLI.exe
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\bin\Debug\net10.0\CalculadoraCLI.deps.json
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\bin\Debug\net10.0\CalculadoraCLI.runtimeconfig.json
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\bin\Debug\net10.0\CalculadoraCLI.dll
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\bin\Debug\net10.0\CalculadoraCLI.pdb
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\CalculadoraCLI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\CalculadoraCLI.AssemblyInfoInputs.cache
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\CalculadoraCLI.AssemblyInfo.cs
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\CalculadoraCLI.csproj.CoreCompileInputs.cache
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\CalculadoraCLI.dll
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\refint\CalculadoraCLI.dll
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\CalculadoraCLI.pdb
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\CalculadoraCLI.genruntimeconfig.cache
+C:\Users\André\Documents\Visual Studio\C#\calculadora-cli\CalculadoraCLI\CalculadoraCLI\obj\Debug\net10.0\ref\CalculadoraCLI.dll
