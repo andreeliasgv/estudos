@@ -96,7 +96,7 @@
             this.select();
         });
 
-                $('#cpf').blur(function () {
+        $('#cpf').blur(function () {
             var cpfLimpo = $('#cpf').unmask().val();
             console.log("CPF Limpo:");
             console.log(cpfLimpo);
@@ -114,11 +114,11 @@
                 trocaMascara($('#cpf').val());
                 console.log("verificando cpf no backend");
                 // Se passou pela validação local, faz a verificação no backend
-                if ($('#id').val() == 0){
+                if ($('#id').val() == 0) {
                     $.ajax({
                         type: 'get',
                         url: 'UsuarioVerificarCpf', // sua servlet ou endpoint no backend
-                        data: { cpf: cpfLimpo },
+                        data: {cpf: cpfLimpo},
                         success: function (response) {
                             console.log("resposta validacao backend:")
                             console.log(response);
@@ -142,7 +142,52 @@
                 }
             }
         });
-        
+
+        $('#email').blur(function () {
+            var emailVal = $('#email').val().trim();
+
+            if (emailVal === '') {
+                return;
+            }
+
+            var regexEmail = /^[\w+.\-]+@[\w+\-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/;
+            if (!regexEmail.test(emailVal)) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'E-mail inválido!',
+                    text: 'Informe um e-mail no formato correto.',
+                    showConfirmButton: true,
+                    timer: 4000
+                }).then(function () {
+                    $('#email').val('').focus();
+                });
+                return;
+            }
+
+            $.ajax({
+                type: 'get',
+                url: 'UsuarioVerificarEmail',
+                data: {email: emailVal, id: $('#id').val()},
+                success: function (response) {
+                    if (response == '1') {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            title: 'E-mail já cadastrado!',
+                            text: 'Por favor, informe outro e-mail.',
+                            showConfirmButton: true,
+                            timer: 4000
+                        }).then(function () {
+                            $('#email').val('').focus();
+                        });
+                    }
+                },
+                error: function () {
+                    console.log('Erro ao verificar e-mail no servidor.');
+                }
+            });
+        });
         $('#nome').focus();
     });
 
@@ -193,11 +238,21 @@
             Swal.fire({
                 position: 'center',
                 icon: 'error',
-                title: 'Verifique o email!',
+                title: 'Verifique o e-mail!',
                 showConfirmButton: false,
                 timer: 1000
             });
-            $("#email").focus();
+            $('#email').focus();
+        } else if (!/^[\w+.\-]+@[\w+\-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/.test($('#email').val().trim())) {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'E-mail inválido!',
+                text: 'Informe um e-mail no formato correto.',
+                showConfirmButton: false,
+                timer: 2000
+            });
+            $('#email').focus();
         } else if (document.getElementById("senha").value === '') {
             Swal.fire({
                 position: 'center',
@@ -293,6 +348,33 @@
                     }).then(function () {
                         setTimeout(function () {
                             $('#nome').focus();
+                        }, 50);
+                    });
+
+                } else if (data == 6) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: 'E-mail inválido!',
+                        text: 'Informe um e-mail no formato correto.',
+                        showConfirmButton: true,
+                        timer: 5000
+                    }).then(function () {
+                        setTimeout(function () {
+                            $('#email').val('').focus();
+                        }, 50);
+                    });
+                } else if (data == 7) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: 'E-mail já cadastrado!',
+                        text: 'Por favor, informe outro e-mail.',
+                        showConfirmButton: true,
+                        timer: 5000
+                    }).then(function () {
+                        setTimeout(function () {
+                            $('#email').val('').focus();
                         }, 50);
                     });
                 } else {

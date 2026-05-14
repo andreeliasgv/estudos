@@ -183,5 +183,21 @@ public class UsuarioDAO implements GenericDAO{
         }
         return false;
     }
+    
+    public boolean emailExiste(String email, int id) {
+    String sql = "SELECT COUNT(*) AS quantidade_email FROM usuario WHERE email = ? AND id <> ?";
+    try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        stmt.setString(1, email);
+        stmt.setInt(2, id);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            if (rs.getInt("quantidade_email") > 0)
+                return true;
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return false;
+}
 
 }

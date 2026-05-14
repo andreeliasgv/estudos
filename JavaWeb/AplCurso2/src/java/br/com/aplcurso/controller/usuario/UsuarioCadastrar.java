@@ -59,16 +59,17 @@ public class UsuarioCadastrar extends HttpServlet {
 
             //Tratamento para o CPF
             if (!DocumentoValidador.isDocumentoValido(cpf)) {
-                //verifica se cpf é valido
                 response.getWriter().write("3");
             } else if (dao.cpfExiste(cpf) && id == 0) {
-                //verifica se cpf já esta cadastrado
                 response.getWriter().write("4");
             } else if (nome.isEmpty() || nome.isBlank() || salario <= 0
                     || email.isBlank() || email.isEmpty() || senha.isBlank()
                     || senha.isEmpty()) {
-                //verifica inconsistencias em outros atributos do cadastro
                 response.getWriter().write("5");
+            } else if (!email.matches("^[\\w+.\\-]+@[\\w+\\-]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$")) {
+                response.getWriter().write("6");
+            } else if (dao.emailExiste(email, id)) {
+                response.getWriter().write("7");
             } else {
                 //passou nas validacoes - grava dados
                 Usuario oUsuario = new Usuario();
