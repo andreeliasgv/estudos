@@ -21,10 +21,56 @@
 hs_err_pid*
 replay_pid*
 
-# Maven / Gradle
+# =========================
+# MAVEN / GRADLE
+# =========================
+
 target/
 .gradle/
 build/
+out/
+
+# Maven Wrapper logs
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# TOMCAT
+# =========================
+
+# Logs
+logs/
+
+# Temp files
+temp/
+work/
+
+# Deployed applications
+webapps/
+
+# Tomcat config generated locally
+conf/Catalina/
+
+# =========================
+# DATABASE
+# =========================
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL dumps
+*.backup
+*.sql
+
+# =========================
+# ENVIRONMENT VARIABLES
+# =========================
+
+.env
+.env.local
+application-local.properties
+application-dev.properties
 
 # =========================
 # C# / .NET
@@ -47,6 +93,25 @@ obj/
 # NuGet
 packages/
 *.nupkg
+
+# =========================
+# IDEs
+# =========================
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# NetBeans
+nbproject/private/
 
 # =========================
 # GENERIC
