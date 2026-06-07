@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class SingleConnection {
 
     private static Connection conexao = null;
-    private static String servidor = "jdbc:postgresql://localhost:5432/bdpokemon?autoReconnect=true";
+    private static String servidor = "jdbc:postgresql://localhost:5432/bdaplcinema?autoReconnect=true";
     private static String usuario = "postgres";
     private static String senha = "Aegv5469."; // ← coloque sua senha aqui
 

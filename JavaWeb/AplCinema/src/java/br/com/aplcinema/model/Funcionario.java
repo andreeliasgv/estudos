@@ -64,6 +64,29 @@ public class Funcionario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 61 * hash + Objects.hashCode(this.id_funcionario);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Funcionario other = (Funcionario) obj;
+        return Objects.equals(this.id_funcionario, other.id_funcionario);
+    }
+
     
     
 }

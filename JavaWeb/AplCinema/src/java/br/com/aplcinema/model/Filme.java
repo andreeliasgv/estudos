@@ -55,6 +55,29 @@ public class Filme {
     public void setDuracao_minutos(Integer duracao_minutos) {
         this.duracao_minutos = duracao_minutos;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 73 * hash + Objects.hashCode(this.id_filme);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Filme other = (Filme) obj;
+        return Objects.equals(this.id_filme, other.id_filme);
+    }
+
     
     
 }
