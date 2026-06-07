@@ -8,7 +8,7 @@ public class SingleConnection {
     private static Connection conexao = null;
     private static String servidor = "jdbc:postgresql://localhost:5432/bdaplcinema?autoReconnect=true";
     private static String usuario = "postgres";
-    private static String senha = "Aegv5469."; // ← coloque sua senha aqui
+    private static String senha = "postdba"; // ← coloque sua senha aqui
 
     static {
         try {
