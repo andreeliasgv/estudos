@@ -61,7 +61,6 @@ conf/Catalina/
 
 # PostgreSQL dumps
 *.backup
-*.sql
 
 # =========================
 # ENVIRONMENT VARIABLES
